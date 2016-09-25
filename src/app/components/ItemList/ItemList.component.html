@@ -1,0 +1,6 @@
+<button (click)="todoStore.add(text)" md-button>Add</button>
+<button (click)="todoStore.remove()" md-button>remove</button>
+<md-input placeholder="add names" (change)="updateText($event)"></md-input>
+<ol className="ItemList">
+  <Item *ngFor="let el of todoStore.list | async" [text]="el.text"></Item>
+</ol>
